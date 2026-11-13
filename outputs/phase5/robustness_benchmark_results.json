@@ -1,0 +1,305 @@
+{
+  "environment": {
+    "python_version": "3.10.10",
+    "torch_version": "2.11.0+cpu",
+    "os": "Windows 10 (10.0.26300)",
+    "cpu": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+    "cpu_count_logical": 12,
+    "cpu_count_physical": 8,
+    "device": "cpu",
+    "initial_ram_mb": 209.49
+  },
+  "capacity_evaluation": [
+    {
+      "payload_bytes": 16,
+      "mean_embed_time_s": 0.5588,
+      "mean_extract_time_s": 0.2572,
+      "mean_psnr_db": 23.72,
+      "mean_ssim": 0.5173,
+      "mean_mse": 0.004251,
+      "mean_raw_ber": 0.007162,
+      "exact_recovery": true
+    },
+    {
+      "payload_bytes": 64,
+      "mean_embed_time_s": 0.617,
+      "mean_extract_time_s": 0.3188,
+      "mean_psnr_db": 23.72,
+      "mean_ssim": 0.5172,
+      "mean_mse": 0.004252,
+      "mean_raw_ber": 0.009967,
+      "exact_recovery": true
+    },
+    {
+      "payload_bytes": 256,
+      "mean_embed_time_s": 0.694,
+      "mean_extract_time_s": 0.328,
+      "mean_psnr_db": 23.72,
+      "mean_ssim": 0.5171,
+      "mean_mse": 0.004254,
+      "mean_raw_ber": 0.023972,
+      "exact_recovery": true
+    },
+    {
+      "payload_bytes": 1024,
+      "mean_embed_time_s": 0.7172,
+      "mean_extract_time_s": 0.3539,
+      "mean_psnr_db": 23.71,
+      "mean_ssim": 0.5167,
+      "mean_mse": 0.004258,
+      "mean_raw_ber": 0.076022,
+      "exact_recovery": true
+    },
+    {
+      "payload_bytes": 2048,
+      "mean_embed_time_s": 0.6553,
+      "mean_extract_time_s": 0.3546,
+      "mean_psnr_db": 23.71,
+      "mean_ssim": 0.5168,
+      "mean_mse": 0.004261,
+      "mean_raw_ber": 0.14826,
+      "exact_recovery": true
+    },
+    {
+      "payload_bytes": 4096,
+      "mean_embed_time_s": 0.6252,
+      "mean_extract_time_s": 0.3987,
+      "mean_psnr_db": 23.71,
+      "mean_ssim": 0.517,
+      "mean_mse": 0.004263,
+      "mean_raw_ber": 0.290076,
+      "exact_recovery": true
+    },
+    {
+      "payload_bytes": 7083,
+      "mean_embed_time_s": 0.6876,
+      "mean_extract_time_s": 0.4774,
+      "mean_psnr_db": 23.7,
+      "mean_ssim": 0.5161,
+      "mean_mse": 0.004272,
+      "mean_raw_ber": 0.497388,
+      "exact_recovery": true
+    }
+  ],
+  "robustness_suite": [
+    {
+      "transformation": "Lossless PNG Round-trip",
+      "lossless": true,
+      "mean_transform_psnr_db": 52.97,
+      "mean_raw_channel_ber": 0.011069,
+      "exact_recovery_rate": "100.0%",
+      "auth_pass_rate": "100.0%",
+      "fail_closed_rate": "0.0%",
+      "unauthenticated_plaintext_leaked": false
+    },
+    {
+      "transformation": "JPEG Compression (Q=95)",
+      "lossless": false,
+      "mean_transform_psnr_db": 24.17,
+      "mean_raw_channel_ber": 0.31311,
+      "exact_recovery_rate": "0.0%",
+      "auth_pass_rate": "0.0%",
+      "fail_closed_rate": "100.0%",
+      "unauthenticated_plaintext_leaked": false
+    },
+    {
+      "transformation": "JPEG Compression (Q=90)",
+      "lossless": false,
+      "mean_transform_psnr_db": 23.78,
+      "mean_raw_channel_ber": 0.344998,
+      "exact_recovery_rate": "0.0%",
+      "auth_pass_rate": "0.0%",
+      "fail_closed_rate": "100.0%",
+      "unauthenticated_plaintext_leaked": false
+    },
+    {
+      "transformation": "JPEG Compression (Q=85)",
+      "lossless": false,
+      "mean_transform_psnr_db": 23.4,
+      "mean_raw_channel_ber": 0.39191,
+      "exact_recovery_rate": "0.0%",
+      "auth_pass_rate": "0.0%",
+      "fail_closed_rate": "100.0%",
+      "unauthenticated_plaintext_leaked": false
+    },
+    {
+      "transformation": "JPEG Compression (Q=75)",
+      "lossless": false,
+      "mean_transform_psnr_db": 22.99,
+      "mean_raw_channel_ber": 0.444336,
+      "exact_recovery_rate": "0.0%",
+      "auth_pass_rate": "0.0%",
+      "fail_closed_rate": "100.0%",
+      "unauthenticated_plaintext_leaked": false
+    },
+    {
+      "transformation": "JPEG Compression (Q=50)",
+      "lossless": false,
+      "mean_transform_psnr_db": 22.57,
+      "mean_raw_channel_ber": 0.471048,
+      "exact_recovery_rate": "0.0%",
+      "auth_pass_rate": "0.0%",
+      "fail_closed_rate": "100.0%",
+      "unauthenticated_plaintext_leaked": false
+    },
+    {
+      "transformation": "Resizing (0.5x Downscale + Upscale)",
+      "lossless": false,
+      "mean_transform_psnr_db": 22.74,
+      "mean_raw_channel_ber": 0.314545,
+      "exact_recovery_rate": "0.0%",
+      "auth_pass_rate": "0.0%",
+      "fail_closed_rate": "100.0%",
+      "unauthenticated_plaintext_leaked": false
+    },
+    {
+      "transformation": "Gaussian Noise (sigma=0.001)",
+      "lossless": false,
+      "mean_transform_psnr_db": 60.01,
+      "mean_raw_channel_ber": 0.011166,
+      "exact_recovery_rate": "100.0%",
+      "auth_pass_rate": "100.0%",
+      "fail_closed_rate": "0.0%",
+      "unauthenticated_plaintext_leaked": false
+    },
+    {
+      "transformation": "Gaussian Noise (sigma=0.005)",
+      "lossless": false,
+      "mean_transform_psnr_db": 46.03,
+      "mean_raw_channel_ber": 0.011099,
+      "exact_recovery_rate": "100.0%",
+      "auth_pass_rate": "100.0%",
+      "fail_closed_rate": "0.0%",
+      "unauthenticated_plaintext_leaked": false
+    },
+    {
+      "transformation": "Gaussian Noise (sigma=0.010)",
+      "lossless": false,
+      "mean_transform_psnr_db": 40.02,
+      "mean_raw_channel_ber": 0.011417,
+      "exact_recovery_rate": "100.0%",
+      "auth_pass_rate": "100.0%",
+      "fail_closed_rate": "0.0%",
+      "unauthenticated_plaintext_leaked": false
+    },
+    {
+      "transformation": "Salt & Pepper Noise (0.1%)",
+      "lossless": false,
+      "mean_transform_psnr_db": 34.45,
+      "mean_raw_channel_ber": 0.013147,
+      "exact_recovery_rate": "100.0%",
+      "auth_pass_rate": "100.0%",
+      "fail_closed_rate": "0.0%",
+      "unauthenticated_plaintext_leaked": false
+    },
+    {
+      "transformation": "Block Occlusion (8x8 center)",
+      "lossless": false,
+      "mean_transform_psnr_db": 36.19,
+      "mean_raw_channel_ber": 0.01163,
+      "exact_recovery_rate": "100.0%",
+      "auth_pass_rate": "100.0%",
+      "fail_closed_rate": "0.0%",
+      "unauthenticated_plaintext_leaked": false
+    }
+  ],
+  "adaptive_vs_baseline": [
+    {
+      "image": "coco_val_000000000139.jpg",
+      "adaptive_psnr_db": 23.62,
+      "uniform_psnr_db": 20.73,
+      "adaptive_ssim": 0.4343,
+      "uniform_ssim": 0.3387,
+      "adaptive_mse": 0.004343,
+      "uniform_mse": 0.00846,
+      "adaptive_raw_ber": 0.010651,
+      "uniform_raw_ber": 0.000351,
+      "adaptive_exact": true,
+      "uniform_exact": true
+    },
+    {
+      "image": "coco_val_000000000632.jpg",
+      "adaptive_psnr_db": 24.04,
+      "uniform_psnr_db": 20.88,
+      "adaptive_ssim": 0.5932,
+      "uniform_ssim": 0.4712,
+      "adaptive_mse": 0.003946,
+      "uniform_mse": 0.00816,
+      "adaptive_raw_ber": 0.011963,
+      "uniform_raw_ber": 0.000519,
+      "adaptive_exact": true,
+      "uniform_exact": true
+    },
+    {
+      "image": "coco_val_000000000785.jpg",
+      "adaptive_psnr_db": 23.58,
+      "uniform_psnr_db": 20.85,
+      "adaptive_ssim": 0.3478,
+      "uniform_ssim": 0.2597,
+      "adaptive_mse": 0.00438,
+      "uniform_mse": 0.008229,
+      "adaptive_raw_ber": 0.011978,
+      "uniform_raw_ber": 0.001007,
+      "adaptive_exact": true,
+      "uniform_exact": true
+    },
+    {
+      "image": "coco_val_000000001584.jpg",
+      "adaptive_psnr_db": 23.77,
+      "uniform_psnr_db": 20.79,
+      "adaptive_ssim": 0.5396,
+      "uniform_ssim": 0.4303,
+      "adaptive_mse": 0.004196,
+      "uniform_mse": 0.008343,
+      "adaptive_raw_ber": 0.012192,
+      "uniform_raw_ber": 0.000809,
+      "adaptive_exact": true,
+      "uniform_exact": true
+    },
+    {
+      "image": "nat_baboon.jpg",
+      "adaptive_psnr_db": 23.51,
+      "uniform_psnr_db": 20.8,
+      "adaptive_ssim": 0.6699,
+      "uniform_ssim": 0.5635,
+      "adaptive_mse": 0.004452,
+      "uniform_mse": 0.008318,
+      "adaptive_raw_ber": 0.01033,
+      "uniform_raw_ber": 9.2e-05,
+      "adaptive_exact": true,
+      "uniform_exact": true
+    }
+  ],
+  "security_validation": [
+    {
+      "test": "Correct Password Extraction",
+      "passed": true,
+      "expected": "Exact Plaintext Recovery"
+    },
+    {
+      "test": "Incorrect Password Rejection",
+      "passed": true,
+      "expected": "AuthenticationError (Fail-Closed)"
+    },
+    {
+      "test": "Ciphertext Tampering Rejection",
+      "passed": true,
+      "expected": "AuthenticationError (Fail-Closed)"
+    },
+    {
+      "test": "Authentication Tag Tampering Rejection",
+      "passed": true,
+      "expected": "AuthenticationError (Fail-Closed)"
+    },
+    {
+      "test": "Oversized Payload Rejection (>7083B)",
+      "passed": true,
+      "expected": "PayloadCapacityError / ValueError"
+    },
+    {
+      "test": "Malformed Image Carrier Rejection",
+      "passed": true,
+      "expected": "Clean Exception"
+    }
+  ]
+}

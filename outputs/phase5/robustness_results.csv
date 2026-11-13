@@ -1,0 +1,13 @@
+transformation,lossless,mean_transform_psnr_db,mean_raw_channel_ber,exact_recovery_rate,auth_pass_rate,fail_closed_rate,unauthenticated_plaintext_leaked
+Lossless PNG Round-trip,True,52.97,0.011069,100.0%,100.0%,0.0%,False
+JPEG Compression (Q=95),False,24.17,0.31311,0.0%,0.0%,100.0%,False
+JPEG Compression (Q=90),False,23.78,0.344998,0.0%,0.0%,100.0%,False
+JPEG Compression (Q=85),False,23.4,0.39191,0.0%,0.0%,100.0%,False
+JPEG Compression (Q=75),False,22.99,0.444336,0.0%,0.0%,100.0%,False
+JPEG Compression (Q=50),False,22.57,0.471048,0.0%,0.0%,100.0%,False
+Resizing (0.5x Downscale + Upscale),False,22.74,0.314545,0.0%,0.0%,100.0%,False
+Gaussian Noise (sigma=0.001),False,60.01,0.011166,100.0%,100.0%,0.0%,False
+Gaussian Noise (sigma=0.005),False,46.03,0.011099,100.0%,100.0%,0.0%,False
+Gaussian Noise (sigma=0.010),False,40.02,0.011417,100.0%,100.0%,0.0%,False
+Salt & Pepper Noise (0.1%),False,34.45,0.013147,100.0%,100.0%,0.0%,False
+Block Occlusion (8x8 center),False,36.19,0.01163,100.0%,100.0%,0.0%,False

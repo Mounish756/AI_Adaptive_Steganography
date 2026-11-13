@@ -1,0 +1,74 @@
+{
+  "dataset": "datasets/coco_subset (held-out test split)",
+  "num_test_images": 5,
+  "mean_psnr_db": 23.714000000000002,
+  "mean_ssim": 0.51722,
+  "mean_mse": 0.004255,
+  "mean_raw_channel_ber": 0.0122864,
+  "mean_post_fec_ber": 0.0,
+  "max_usable_plaintext_bytes": 7083,
+  "authentication_success_rate": "100.0%",
+  "exact_recovery_rate": "100.0%",
+  "per_image_results": [
+    {
+      "image": "coco_val_000000000139.jpg",
+      "plaintext_bytes": 101,
+      "ciphertext_bytes": 101,
+      "psnr_db": 23.63,
+      "ssim": 0.4344,
+      "mse": 0.004331,
+      "raw_channel_ber": 0.01207,
+      "post_fec_ber": 0.0,
+      "authenticated": true,
+      "exact_match": true
+    },
+    {
+      "image": "coco_val_000000000632.jpg",
+      "plaintext_bytes": 98,
+      "ciphertext_bytes": 98,
+      "psnr_db": 24.05,
+      "ssim": 0.5946,
+      "mse": 0.003931,
+      "raw_channel_ber": 0.012756,
+      "post_fec_ber": 0.0,
+      "authenticated": true,
+      "exact_match": true
+    },
+    {
+      "image": "coco_val_000000000785.jpg",
+      "plaintext_bytes": 101,
+      "ciphertext_bytes": 101,
+      "psnr_db": 23.6,
+      "ssim": 0.3482,
+      "mse": 0.004369,
+      "raw_channel_ber": 0.01329,
+      "post_fec_ber": 0.0,
+      "authenticated": true,
+      "exact_match": true
+    },
+    {
+      "image": "coco_val_000000001584.jpg",
+      "plaintext_bytes": 98,
+      "ciphertext_bytes": 98,
+      "psnr_db": 23.78,
+      "ssim": 0.5394,
+      "mse": 0.00419,
+      "raw_channel_ber": 0.011841,
+      "post_fec_ber": 0.0,
+      "authenticated": true,
+      "exact_match": true
+    },
+    {
+      "image": "nat_baboon.jpg",
+      "plaintext_bytes": 105,
+      "ciphertext_bytes": 105,
+      "psnr_db": 23.51,
+      "ssim": 0.6695,
+      "mse": 0.004454,
+      "raw_channel_ber": 0.011475,
+      "post_fec_ber": 0.0,
+      "authenticated": true,
+      "exact_match": true
+    }
+  ]
+}

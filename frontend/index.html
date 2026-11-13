@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adaptive Image Embedding — Secure Information Concealment</title>
+  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-icon">
+        <svg width="32" height="32" viewBox="0 0 28 28" fill="none">
+          <rect x="2" y="2" width="10" height="10" rx="2" fill="#C9A227"/>
+          <rect x="16" y="2" width="10" height="10" rx="2" fill="#C9A227" opacity="0.7"/>
+          <rect x="2" y="16" width="10" height="10" rx="2" fill="#C9A227" opacity="0.7"/>
+          <rect x="16" y="16" width="10" height="10" rx="2" fill="#C9A227" opacity="0.35"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <span class="brand-title">Adaptive Embedding</span>
+        <span class="brand-sub">AI Security Framework</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="nav-item active" data-page="dashboard" href="#dashboard">
+        <svg class="nav-icon" viewBox="0 0 20 20" fill="none">
+          <rect x="2" y="2" width="7" height="7" rx="1.5" fill="currentColor"/>
+          <rect x="11" y="2" width="7" height="7" rx="1.5" fill="currentColor" opacity=".5"/>
+          <rect x="2" y="11" width="7" height="7" rx="1.5" fill="currentColor" opacity=".5"/>
+          <rect x="11" y="11" width="7" height="7" rx="1.5" fill="currentColor" opacity=".3"/>
+        </svg>
+        <span>Dashboard</span>
+      </a>
+      <a class="nav-item" data-page="embed" href="#embed">
+        <svg class="nav-icon" viewBox="0 0 20 20" fill="none">
+          <path d="M10 3v11M6 10l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="3" y="15" width="14" height="2" rx="1" fill="currentColor"/>
+        </svg>
+        <span>Embed Message</span>
+      </a>
+      <a class="nav-item" data-page="extract" href="#extract">
+        <svg class="nav-icon" viewBox="0 0 20 20" fill="none">
+          <path d="M10 17V6M6 10l4-4 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="3" y="3" width="14" height="2" rx="1" fill="currentColor"/>
+        </svg>
+        <span>Extract Message</span>
+      </a>
+      <a class="nav-item" data-page="quality" href="#quality">
+        <svg class="nav-icon" viewBox="0 0 20 20" fill="none">
+          <path d="M3 10h4l2-5 4 10 2-5h2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Image Quality</span>
+      </a>
+      <a class="nav-item" data-page="settings" href="#settings">
+        <svg class="nav-icon" viewBox="0 0 20 20" fill="none">
+          <circle cx="10" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/>
+          <path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.2 4.2l1.4 1.4M14.4 14.4l1.4 1.4M4.2 15.8l1.4-1.4M14.4 5.6l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>Settings</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="server-status" id="serverStatus">
+        <span class="status-dot" id="statusDot"></span>
+        <span id="statusText">Checking API…</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ===== MOBILE HEADER ===== -->
+  <header class="mobile-header">
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu">
+      <svg viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <span class="mobile-brand">Adaptive Image Embedding</span>
+  </header>
+
+  <!-- Mobile Backdrop -->
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main-content">
+
+    <!-- PAGE: DASHBOARD -->
+    <section class="page active" id="page-dashboard">
+      <div class="page-header dashboard-header">
+        <div class="header-titles">
+          <div class="header-badge-row">
+            <span class="system-badge">Enterprise Information Concealment</span>
+            <span class="api-status-pill" id="dashboardApiStatus">
+              <span class="status-dot" id="dashboardStatusDot"></span>
+              <span id="dashboardStatusText">Checking API Gateway…</span>
+            </span>
+          </div>
+          <h1 class="page-title">Adaptive Image Embedding Console</h1>
+          <p class="page-sub">Welcome to the security control console. Conceal encrypted secret messages within image carriers using deep neural suitability analysis, Reed–Solomon forward error correction, and AES-256-GCM authentication.</p>
+        </div>
+        <div class="header-meta-chips">
+          <div class="meta-chip">
+            <span class="meta-label">Inference Target</span>
+            <span class="meta-val" id="headerNodeDevice">Local Node (Checking…)</span>
+          </div>
+          <div class="meta-chip">
+            <span class="meta-label">Integrity Standard</span>
+            <span class="meta-val highlight">Zero Plaintext Leakage</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Metrics Row -->
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-icon gold">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-label">Usable Payload Capacity</span>
+            <span class="stat-value" id="statCapacity">—</span>
+            <span class="stat-caption" id="statCapacityCaption">Max ~3,900 UTF-8 characters</span>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon brown">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="2"/><path d="M8 12h8M8 8h8M8 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-label">Carrier Resolution</span>
+            <span class="stat-value" id="statResolution">256 × 256</span>
+            <span class="stat-caption" id="statResolutionCaption">Native carrier patch (1 bpp)</span>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon gold">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-label">Cryptographic Standard</span>
+            <span class="stat-value" id="statCrypto">AES-256-GCM</span>
+            <span class="stat-caption" id="statCryptoCaption">PBKDF2-HMAC-SHA256 (100k)</span>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon brown">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-label">Error Correction (FEC)</span>
+            <span class="stat-value" id="statFEC">Reed–Solomon</span>
+            <span class="stat-caption" id="statFECCaption">32 parity symbols / chunk</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Workflow Pipeline Section (Full Width) -->
+      <div class="card workflow-card">
+        <div class="card-header">
+          <div class="card-header-title">
+            <svg class="header-icon" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="11" y="3" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="11" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="11" y="11" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.8"/></svg>
+            <h3>Four-Stage Security &amp; Neural Architecture Workflow</h3>
+          </div>
+          <span class="badge badge-gold">Zero-Leakage Assurance</span>
+        </div>
+        <div class="card-body">
+          <div class="workflow-pipeline">
+            <!-- Stage 1 -->
+            <div class="workflow-stage">
+              <div class="stage-top">
+                <span class="stage-tag">STAGE 01</span>
+                <div class="stage-icon-wrap gold">
+                  <svg viewBox="0 0 20 20" fill="none"><rect x="4" y="9" width="12" height="8" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M7 9V6a3 3 0 016 0v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                </div>
+              </div>
+              <div class="stage-content">
+                <h4 class="stage-title">AES-256-GCM Encryption</h4>
+                <p class="stage-desc">Derives a 256-bit key via PBKDF2 with 100,000 iterations. Encrypts payload with 128-bit random salt and 96-bit unique nonce.</p>
+                <div class="stage-pills">
+                  <span class="stage-pill">Confidentiality</span>
+                  <span class="stage-pill">128-bit Tag</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="workflow-connector" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+
+            <!-- Stage 2 -->
+            <div class="workflow-stage">
+              <div class="stage-top">
+                <span class="stage-tag">STAGE 02</span>
+                <div class="stage-icon-wrap brown">
+                  <svg viewBox="0 0 20 20" fill="none"><path d="M10 2l7 4v5c0 5-4 8-7 9-3-1-7-4-7-9V6l7-4z" stroke="currentColor" stroke-width="1.8"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                </div>
+              </div>
+              <div class="stage-content">
+                <h4 class="stage-title">Reed–Solomon Error Correction</h4>
+                <p class="stage-desc">Appends 32 Galois-field parity symbols per chunk. Applies pseudorandom spatial interleaving to resist micro-corruption.</p>
+                <div class="stage-pills">
+                  <span class="stage-pill">Channel Coding</span>
+                  <span class="stage-pill">Interleaving</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="workflow-connector" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+
+            <!-- Stage 3 -->
+            <div class="workflow-stage">
+              <div class="stage-top">
+                <span class="stage-tag">STAGE 03</span>
+                <div class="stage-icon-wrap gold">
+                  <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M10 2v3M10 15v3M2 10h3M15 10h3M4.2 4.2l2.1 2.1M13.7 13.7l2.1 2.1M4.2 15.8l2.1-2.1M13.7 6.3l2.1-2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                </div>
+              </div>
+              <div class="stage-content">
+                <h4 class="stage-title">Neural Adaptive Embedding</h4>
+                <p class="stage-desc">Deep analyzer computes continuous spatial suitability maps; U-Net encoder embeds carrier bits into complex textured regions.</p>
+                <div class="stage-pills">
+                  <span class="stage-pill">U-Net + CBAM</span>
+                  <span class="stage-pill">PSNR &gt; 40 dB</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="workflow-connector" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+
+            <!-- Stage 4 -->
+            <div class="workflow-stage">
+              <div class="stage-top">
+                <span class="stage-tag">STAGE 04</span>
+                <div class="stage-icon-wrap brown">
+                  <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                </div>
+              </div>
+              <div class="stage-content">
+                <h4 class="stage-title">Authenticated Extraction</h4>
+                <p class="stage-desc">U-Net decoder recovers carrier probabilities; GHASH authentication verifies data integrity before releasing plaintext.</p>
+                <div class="stage-pills">
+                  <span class="stage-pill">Fail-Closed</span>
+                  <span class="stage-pill">Tamper-Evident</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions Grid -->
+      <div class="card quick-actions-card">
+        <div class="card-header">
+          <div class="card-header-title">
+            <svg class="header-icon" viewBox="0 0 20 20" fill="none"><path d="M13 10V3L4 12h5v7l9-9h-5z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3>Quick Operations</h3>
+          </div>
+          <span class="badge badge-gold">Direct Navigation</span>
+        </div>
+        <div class="card-body">
+          <div class="action-tiles-grid">
+            <button class="action-tile action-primary" onclick="navigate('embed')" type="button">
+              <div class="action-tile-icon gold">
+                <svg viewBox="0 0 20 20" fill="none"><path d="M10 3v11M6 10l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="15" width="14" height="2" rx="1" fill="currentColor"/></svg>
+              </div>
+              <div class="action-tile-text">
+                <span class="action-tile-title">Embed Secret Message</span>
+                <span class="action-tile-desc">Encrypt payload with AES-256-GCM and conceal within cover image</span>
+              </div>
+              <div class="action-tile-arrow">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </button>
+
+            <button class="action-tile action-secondary" onclick="navigate('extract')" type="button">
+              <div class="action-tile-icon brown">
+                <svg viewBox="0 0 20 20" fill="none"><path d="M10 17V6M6 10l4-4 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="3" width="14" height="2" rx="1" fill="currentColor"/></svg>
+              </div>
+              <div class="action-tile-text">
+                <span class="action-tile-title">Extract &amp; Verify Secret</span>
+                <span class="action-tile-desc">Verify GHASH tag authenticity and decrypt concealed plaintext</span>
+              </div>
+              <div class="action-tile-arrow">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </button>
+
+            <button class="action-tile action-outline" onclick="navigate('quality')" type="button">
+              <div class="action-tile-icon dark">
+                <svg viewBox="0 0 20 20" fill="none"><path d="M3 10h4l2-5 4 10 2-5h2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="action-tile-text">
+                <span class="action-tile-title">Inspect Image Fidelity</span>
+                <span class="action-tile-desc">Side-by-side inspection, ×20 difference map, and PSNR/SSIM analysis</span>
+              </div>
+              <div class="action-tile-arrow">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Operations Log (No Secrets Stored) -->
+      <div class="card operations-card">
+        <div class="card-header">
+          <div class="card-header-title">
+            <svg class="header-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M10 6v4l2.5 2.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <h3>Session Cryptographic Operations</h3>
+          </div>
+          <div class="card-header-actions">
+            <span class="log-count-badge" id="operationCountBadge">0 operations</span>
+            <button class="btn btn-sm btn-outline" id="clearHistoryBtn" title="Clear session operations log">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M3 4h10M6 4V2.5a.5.5 0 01.5-.5h3a.5.5 0 01.5.5V4M5 4v9a1 1 0 001 1h4a1 1 0 001-1V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              Clear Log
+            </button>
+          </div>
+        </div>
+        <div class="card-body" style="padding: 0;">
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Timestamp</th>
+                  <th>Operation Type</th>
+                  <th>Payload Size</th>
+                  <th>PSNR Fidelity</th>
+                  <th>SSIM Index</th>
+                  <th>Cryptographic Authentication</th>
+                </tr>
+              </thead>
+              <tbody id="operationsTbody">
+                <tr class="empty-row">
+                  <td colspan="6">
+                    <div class="table-empty-state">
+                      <div class="empty-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                      </div>
+                      <span class="empty-title">No Cryptographic Operations Recorded</span>
+                      <span class="empty-sub">Embed or extract a secret message to log real-time fidelity measurements and verification events.</span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Security Notice -->
+      <div class="card notice-card">
+        <div class="notice-icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#C9A227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="notice-text">
+          <strong>Cryptographic Zero-Leakage Guarantee</strong>
+          Passwords and plaintexts are never logged to disk or stored in browser history. Extraction strictly verifies the AES-256-GCM authentication tag; any tampering or incorrect password results in immediate cryptographic rejection without exposing unauthenticated data. Save the generated stego image as lossless <strong>PNG</strong> to preserve the embedded carrier.
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE: EMBED -->
+    <section class="page" id="page-embed">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Embed Secret Message</h1>
+          <p class="page-sub">Conceal an authenticated, encrypted message inside a cover image</p>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <!-- Configuration Card -->
+        <div class="card form-card">
+          <div class="card-header"><h3>Embedding Parameters</h3></div>
+          <div class="card-body">
+            <!-- Image drop -->
+            <div class="form-group">
+              <label class="form-label">Cover Carrier Image <span class="req">*</span></label>
+              <div class="drop-zone" id="embedDropZone" tabindex="0" role="button" aria-label="Upload cover image">
+                <input type="file" id="embedImageInput" accept=".png,.jpg,.jpeg,.bmp,.webp,.tiff" hidden />
+                <div class="drop-content" id="embedDropContent">
+                  <svg class="drop-icon" viewBox="0 0 48 48" fill="none">
+                    <rect x="8" y="8" width="32" height="32" rx="4" stroke="#C9A227" stroke-width="2.2"/>
+                    <path d="M24 18v12M18 24l6 6 6-6" stroke="#C9A227" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <p>Drag & drop cover image or <span class="link-text">browse files</span></p>
+                  <p class="hint">PNG, JPG, BMP, WebP — maximum 20 MB</p>
+                </div>
+                <img id="embedPreviewImg" class="preview-thumb" hidden alt="Cover Preview" />
+              </div>
+            </div>
+
+            <!-- Secret message -->
+            <div class="form-group">
+              <label class="form-label" for="embedMessage">Secret Message <span class="req">*</span></label>
+              <textarea id="embedMessage" class="form-textarea" placeholder="Type confidential message to conceal…" maxlength="4000" rows="4"></textarea>
+              <div class="form-footer-row">
+                <span class="form-hint">Capacity: up to ~4,000 characters (UTF-8)</span>
+                <span class="char-count" id="embedCharCount">0 / 4000</span>
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+              <label class="form-label" for="embedPassword">Encryption Password <span class="req">*</span></label>
+              <div class="input-wrap">
+                <input type="password" id="embedPassword" class="form-input" placeholder="Strong encryption password (minimum 4 characters)" autocomplete="new-password" />
+                <button type="button" class="show-pw-btn" data-target="embedPassword" aria-label="Toggle password visibility">
+                  <svg viewBox="0 0 20 20" fill="none"><path d="M1 10s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z" stroke="currentColor" stroke-width="1.8"/><circle cx="10" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <button class="btn btn-primary btn-full" id="embedBtn">
+              <svg viewBox="0 0 20 20" fill="none"><path d="M10 3v11M6 10l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Encrypt &amp; Embed Message
+            </button>
+          </div>
+        </div>
+
+        <!-- Result Card -->
+        <div class="card result-card" id="embedResult">
+          <div class="card-header"><h3>Embedding Results</h3></div>
+          <div class="card-body">
+            <div class="result-placeholder" id="embedResultPlaceholder">
+              <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#4A3026" stroke-width="2"/><path d="M24 16v8l6 3" stroke="#4A3026" stroke-width="2" stroke-linecap="round"/></svg>
+              <p>Uploaded preview and generated stego output will be displayed here.</p>
+            </div>
+
+            <div id="embedResultContent" hidden>
+              <!-- Previews -->
+              <div class="result-section">
+                <label class="result-label">Visual Comparison Preview</label>
+                <div class="img-compare-box">
+                  <div class="img-box">
+                    <span class="img-tag">Original</span>
+                    <img id="embedOriginalImg" class="compare-img" alt="Original Cover" />
+                  </div>
+                  <div class="img-box">
+                    <span class="img-tag stego-tag">Stego Output</span>
+                    <img id="embedStegoImg" class="compare-img" alt="Generated Stego" />
+                  </div>
+                </div>
+                <button class="btn btn-primary btn-full" id="embedDownloadBtn">
+                  <svg viewBox="0 0 20 20" fill="none"><path d="M10 3v11M6 10l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="15" width="14" height="2" rx="1" fill="currentColor"/></svg>
+                  Download Stego Image (Lossless PNG)
+                </button>
+              </div>
+
+              <!-- Metrics -->
+              <div class="result-section">
+                <label class="result-label">Objective Quality Metrics (Calculated by Backend)</label>
+                <div class="metrics-row">
+                  <div class="metric-chip">
+                    <span class="metric-key">PSNR</span>
+                    <span class="metric-val" id="mPSNR">—</span>
+                    <span class="metric-unit">dB</span>
+                  </div>
+                  <div class="metric-chip">
+                    <span class="metric-key">SSIM</span>
+                    <span class="metric-val" id="mSSIM">—</span>
+                  </div>
+                  <div class="metric-chip">
+                    <span class="metric-key">MSE</span>
+                    <span class="metric-val" id="mMSE">—</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cryptographic Payload Stats -->
+              <div class="result-section">
+                <label class="result-label">Cryptographic Details</label>
+                <div class="info-table">
+                  <div class="info-row"><span>Carrier Dimensions</span><span id="iDims">—</span></div>
+                  <div class="info-row"><span>Plaintext Payload</span><span id="iPlain">—</span></div>
+                  <div class="info-row"><span>Encrypted Ciphertext</span><span id="iCipher">—</span></div>
+                  <div class="info-row"><span>Neural Carrier Patch</span><span>256 × 256 (Centered, Native Res)</span></div>
+                  <div class="info-row"><span>Inference Duration</span><span id="iTime">—</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Error Notification -->
+            <div class="alert alert-error" id="embedError" hidden></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE: EXTRACT -->
+    <section class="page" id="page-extract">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Extract Secret Message</h1>
+          <p class="page-sub">Authenticate and decrypt hidden secrets from stego carriers</p>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <!-- Input Card -->
+        <div class="card form-card">
+          <div class="card-header"><h3>Extraction Parameters</h3></div>
+          <div class="card-body">
+            <div class="form-group">
+              <label class="form-label">Stego Carrier Image <span class="req">*</span></label>
+              <div class="drop-zone" id="extractDropZone" tabindex="0" role="button" aria-label="Upload stego image">
+                <input type="file" id="extractImageInput" accept=".png,.jpg,.jpeg,.bmp,.webp,.tiff" hidden />
+                <div class="drop-content" id="extractDropContent">
+                  <svg class="drop-icon" viewBox="0 0 48 48" fill="none">
+                    <rect x="8" y="8" width="32" height="32" rx="4" stroke="#C9A227" stroke-width="2.2"/>
+                    <path d="M24 30V18M18 24l6-6 6 6" stroke="#C9A227" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <p>Drag & drop stego image or <span class="link-text">browse files</span></p>
+                  <p class="hint">Must be the uncompressed PNG generated during embedding</p>
+                </div>
+                <img id="extractPreviewImg" class="preview-thumb" hidden alt="Stego Preview" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="extractPassword">Decryption Password <span class="req">*</span></label>
+              <div class="input-wrap">
+                <input type="password" id="extractPassword" class="form-input" placeholder="Enter encryption password" autocomplete="current-password" />
+                <button type="button" class="show-pw-btn" data-target="extractPassword" aria-label="Toggle password visibility">
+                  <svg viewBox="0 0 20 20" fill="none"><path d="M1 10s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z" stroke="currentColor" stroke-width="1.8"/><circle cx="10" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <button class="btn btn-primary btn-full" id="extractBtn">
+              <svg viewBox="0 0 20 20" fill="none"><path d="M10 17V6M6 10l4-4 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Extract &amp; Verify Authenticity
+            </button>
+          </div>
+        </div>
+
+        <!-- Result Card -->
+        <div class="card result-card">
+          <div class="card-header"><h3>Authenticated Plaintext</h3></div>
+          <div class="card-body">
+            <div class="result-placeholder" id="extractResultPlaceholder">
+              <svg viewBox="0 0 48 48" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" transform="translate(8 8) scale(1.3)" stroke="#4A3026" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <p>Plaintext will only be released after successful cryptographic tag authentication.</p>
+            </div>
+
+            <div id="extractResultContent" hidden>
+              <div class="success-banner" id="extractSuccessBanner">
+                <svg viewBox="0 0 20 20" fill="none"><path d="M9 12l2 2 4-4M17 10a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                AES-256-GCM GHASH Authentication Tag Verified
+              </div>
+              <div class="form-group" style="margin-top: 1rem;">
+                <label class="result-label">Recovered Secret Plaintext</label>
+                <div class="recovered-msg" id="recoveredMsg"></div>
+                <button class="btn btn-outline btn-sm" id="copyMsgBtn">
+                  <svg viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M3 11V3h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Copy to Clipboard
+                </button>
+              </div>
+              <div class="info-table" style="margin-top: 1rem;">
+                <div class="info-row"><span>Extraction &amp; Decrypt Time</span><span id="eTime">—</span></div>
+                <div class="info-row"><span>Recovered Payload Length</span><span id="eLength">—</span></div>
+                <div class="info-row"><span>Integrity Verification</span><span>100% Pass (Lossless)</span></div>
+              </div>
+            </div>
+
+            <!-- Error Banner -->
+            <div class="alert alert-error" id="extractError" hidden></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE: IMAGE QUALITY -->
+    <section class="page" id="page-quality">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Image Quality Analysis</h1>
+          <p class="page-sub">Side-by-side visual comparison, amplified difference maps, and mathematical fidelity</p>
+        </div>
+      </div>
+
+      <!-- Selection Card -->
+      <div class="card">
+        <div class="card-header"><h3>Load Carrier Pair for Inspection</h3></div>
+        <div class="card-body quality-inputs">
+          <div class="form-group half">
+            <label class="form-label">Reference Cover Image</label>
+            <div class="drop-zone sm" id="qualOrigDrop" tabindex="0" role="button">
+              <input type="file" id="qualOrigInput" accept=".png,.jpg,.jpeg,.bmp,.webp,.tiff" hidden />
+              <div class="drop-content" id="qualOrigContent">
+                <svg class="drop-icon sm-icon" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" rx="3" stroke="#C9A227" stroke-width="2"/><path d="M16 12v8M12 16l4 4 4-4" stroke="#C9A227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <p>Upload Original Image</p>
+              </div>
+              <img id="qualOrigPreview" class="preview-thumb" hidden alt="Original Carrier" />
+            </div>
+          </div>
+          <div class="form-group half">
+            <label class="form-label">Stego Carrier Image</label>
+            <div class="drop-zone sm" id="qualStegoDrop" tabindex="0" role="button">
+              <input type="file" id="qualStegoInput" accept=".png,.jpg,.jpeg,.bmp,.webp,.tiff" hidden />
+              <div class="drop-content" id="qualStegoContent">
+                <svg class="drop-icon sm-icon" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" rx="3" stroke="#C9A227" stroke-width="2"/><path d="M16 20v-8M12 16l4-4 4 4" stroke="#C9A227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <p>Upload Stego Image</p>
+              </div>
+              <img id="qualStegoPreview" class="preview-thumb" hidden alt="Stego Carrier" />
+            </div>
+          </div>
+        </div>
+        <div style="padding: 0 1.5rem 1.5rem;">
+          <button class="btn btn-primary" id="qualCompareBtn">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M3 10h4l2-5 4 10 2-5h2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Compute Mathematical Fidelity &amp; Render Comparison
+          </button>
+        </div>
+      </div>
+
+      <div id="qualityResults" hidden>
+        <!-- Metrics -->
+        <div class="card">
+          <div class="card-header"><h3>Objective Quality Metrics</h3></div>
+          <div class="card-body">
+            <div class="metrics-row big">
+              <div class="metric-chip big">
+                <span class="metric-key">PSNR</span>
+                <span class="metric-val" id="qPSNR">—</span>
+                <span class="metric-unit">dB</span>
+                <span class="metric-note" id="qPSNRNote"></span>
+              </div>
+              <div class="metric-chip big">
+                <span class="metric-key">SSIM</span>
+                <span class="metric-val" id="qSSIM">—</span>
+                <span class="metric-note" id="qSSIMNote"></span>
+              </div>
+              <div class="metric-chip big">
+                <span class="metric-key">MSE</span>
+                <span class="metric-val" id="qMSE">—</span>
+                <span class="metric-note" id="qMSENote"></span>
+              </div>
+              <div class="metric-chip big">
+                <span class="metric-key">Max Peak Δ</span>
+                <span class="metric-val" id="qMaxDiff">—</span>
+                <span class="metric-unit">/ 255</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Inspection -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Visual Inspection &amp; Difference Analysis</h3>
+            <div class="compare-toggle">
+              <button type="button" class="toggle-btn active" id="viewSideBySide">Side by Side</button>
+              <button type="button" class="toggle-btn" id="viewDiff">Difference Map (×20 Amplified)</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="compare-panel" id="sideBySidePanel">
+              <div class="img-box">
+                <span class="img-tag">Original Cover</span>
+                <canvas id="qOrigCanvas" class="compare-canvas"></canvas>
+              </div>
+              <div class="img-box">
+                <span class="img-tag stego-tag">Stego Image</span>
+                <canvas id="qStegoCanvas" class="compare-canvas"></canvas>
+              </div>
+            </div>
+            <div class="compare-panel" id="diffPanel" hidden>
+              <div class="img-box full-width">
+                <span class="img-tag diff-tag">Amplified Residual Perturbations (×20)</span>
+                <canvas id="qDiffCanvas" class="compare-canvas"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-error" id="qualError" hidden></div>
+    </section>
+
+    <!-- PAGE: SETTINGS -->
+    <section class="page" id="page-settings">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">System Settings &amp; Configuration</h1>
+          <p class="page-sub">API connection endpoint, model checkpoints, and security specifications</p>
+        </div>
+      </div>
+
+      <!-- Server Connection -->
+      <div class="card">
+        <div class="card-header"><h3>Backend API Service</h3></div>
+        <div class="card-body">
+          <div class="form-group">
+            <label class="form-label" for="apiUrl">API Gateway Address</label>
+            <div class="input-row">
+              <input type="text" id="apiUrl" class="form-input" value="http://127.0.0.1:5050" />
+              <button class="btn btn-outline" id="testConnBtn">Test Connectivity</button>
+            </div>
+            <p class="form-hint">Start backend manually: <code class="inline-code">python api/server.py</code> or unified: <code class="inline-code">python start.py</code></p>
+          </div>
+          <div class="alert" id="connTestResult" hidden></div>
+        </div>
+      </div>
+
+      <!-- Technical Specifications -->
+      <div class="card">
+        <div class="card-header"><h3>Technical Specifications</h3></div>
+        <div class="card-body">
+          <div class="info-table">
+            <div class="info-row"><span>Cryptographic Cipher</span><span>AES-256-GCM (GHASH 128-bit integrity tag)</span></div>
+            <div class="info-row"><span>Key Derivation</span><span>PBKDF2-HMAC-SHA256 (100,000 iterations, 128-bit salt)</span></div>
+            <div class="info-row"><span>Error Correction</span><span>Reed–Solomon FEC (32 parity symbols per chunk)</span></div>
+            <div class="info-row"><span>Spatial Interleaving</span><span>Pseudorandom dispersion guided by cryptographic salt</span></div>
+            <div class="info-row"><span>Neural Architecture</span><span>NeuralAdaptiveAnalyzer + UNet Encoder + UNet Decoder</span></div>
+            <div class="info-row"><span>Active Checkpoint</span><span>checkpoints/phase5_balanced/best_model.pth</span></div>
+            <div class="info-row"><span>Native Patch Resolution</span><span>256 × 256 pixels</span></div>
+            <div class="info-row"><span>Usable Payload Capacity</span><span id="settingsCapacity">Calculating…</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Operational Guidelines -->
+      <div class="card">
+        <div class="card-header"><h3>Operational Rules</h3></div>
+        <div class="card-body">
+          <ul class="reminder-list">
+            <li><strong>Always save stego images as PNG:</strong> Lossy compression formats (such as JPEG) alter high-frequency pixel values and destroy embedded carrier maps.</li>
+            <li><strong>Maintain geometric consistency:</strong> Resizing, cropping, or rotating stego images will shift coordinate grids and cause Reed–Solomon decoding to fail.</li>
+            <li><strong>Unauthenticated rejection:</strong> Any password mismatch or pixel tampering results in an immediate authentication error; no invalid plaintext is ever leaked.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Loading overlay -->
+  <div class="loading-overlay" id="loadingOverlay" hidden style="display: none;">
+    <div class="spinner-wrap">
+      <div class="spinner"></div>
+      <span id="loadingLabel">Executing neural embedding…</span>
+    </div>
+  </div>
+
+
+  <script src="app.js?v=4"></script>
+</body>
+</html>

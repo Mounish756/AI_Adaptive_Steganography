@@ -1,0 +1,261 @@
+{
+  "model_checkpoint": "checkpoints/phase2b/phase2b_model.pth",
+  "scaling_factor": 0.15,
+  "results": [
+    {
+      "image_index": 0,
+      "image_name": "C:\\Users\\mpada\\OneDrive\\Documents\\AI-Adaptive-Steganography\\datasets\\coco_subset\\coco_val_000000000139",
+      "payloads": [
+        {
+          "payload_bytes": 64,
+          "psnr_db": 23.6391,
+          "ssim": 0.434747,
+          "mse": 0.00432608,
+          "exact_recovery": true
+        },
+        {
+          "payload_bytes": 64,
+          "error": "'charmap' codec can't encode character '\\u2713' in position 67: character maps to <undefined>"
+        },
+        {
+          "payload_bytes": 512,
+          "psnr_db": 23.6324,
+          "ssim": 0.43459,
+          "mse": 0.00433272,
+          "exact_recovery": true
+        },
+        {
+          "payload_bytes": 512,
+          "error": "'charmap' codec can't encode character '\\u2713' in position 67: character maps to <undefined>"
+        },
+        {
+          "payload_bytes": 2048,
+          "psnr_db": 23.6498,
+          "ssim": 0.434907,
+          "mse": 0.00431538,
+          "exact_recovery": true
+        },
+        {
+          "payload_bytes": 2048,
+          "error": "'charmap' codec can't encode character '\\u2713' in position 67: character maps to <undefined>"
+        },
+        {
+          "payload_bytes": 7083,
+          "psnr_db": 23.6074,
+          "ssim": 0.433652,
+          "mse": 0.00435776,
+          "exact_recovery": true
+        },
+        {
+          "payload_bytes": 7083,
+          "error": "'charmap' codec can't encode character '\\u2713' in position 67: character maps to <undefined>"
+        }
+      ]
+    },
+    {
+      "image_index": 1,
+      "image_name": "C:\\Users\\mpada\\OneDrive\\Documents\\AI-Adaptive-Steganography\\datasets\\coco_subset\\coco_val_000000000632",
+      "payloads": [
+        {
+          "payload_bytes": 64,
+          "psnr_db": 24.0562,
+          "ssim": 0.593936,
+          "mse": 0.0039299,
+          "exact_recovery": true
+        },
+        {
+          "payload_bytes": 64,
+          "error": "'charmap' codec can't encode character '\\u2713' in position 67: character maps to <undefined>"
+        },
+        {
+          "payload_bytes": 512,
+          "psnr_db": 24.0658,
+          "ssim": 0.594441,
+          "mse": 0.00392122,
+          "exact_recovery": true
+        },
+        {
+          "payload_bytes": 512,
+          "error": "'charmap' codec can't encode character '\\u2713' in position 67: character maps to <undefined>"
+        },
+        {
+          "payload_bytes": 2048,
+          "psnr_db": 24.0497,
+          "ssim": 0.594025,
+          "mse": 0.0039358,
+          "exact_recovery": true
+        },
+        {
+          "payload_bytes": 2048,
+          "error": "'charmap' codec can't encode character '\\u2713' in position 67: character maps to <undefined>"
+        },
+        {
+          "payload_bytes": 7083,
+          "psnr_db": 24.0373,
+          "ssim": 0.593094,
+          "mse": 0.00394702,
+          "exact_recovery": true
+        },
+        {
+          "payload_bytes": 7083,
+          "error": "'charmap' codec can't encode character '\\u2713' in position 67: character maps to <undefined>"
+        }
+      ]
+    },
+    {
+      "image_index": 2,
+      "image_name": "C:\\Users\\mpada\\OneDrive\\Documents\\AI-Adaptive-Steganography\\datasets\\coco_subset\\coco_val_000000000785",
+      "payloads": [
+        {
+          "payload_bytes": 64,
+          "psnr_db": 23.5827,
+          "ssim": 0.347079,
+          "mse": 0.0043826,
+          "exact_recovery": true
+        },
+        {
+          "payload_bytes": 64,
+          "error": "'charmap' codec can't encode character '\\u2713' in position 67: character maps to <undefined>"
+        },
+        {
+          "payload_bytes": 512,
+          "psnr_db": 23.591,
+          "ssim": 0.347367,
+          "mse": 0.00437425,
+          "exact_recovery": true
+        },
+        {
+          "payload_bytes": 512,
+          "error": "'charmap' codec can't encode character '\\u2713' in position 67: character maps to <undefined>"
+        },
+        {
+          "payload_bytes": 2048,
+          "psnr_db": 23.586,
+          "ssim": 0.347516,
+          "mse": 0.00437929,
+          "exact_recovery": true
+        },
+        {
+          "payload_bytes": 2048,
+          "error": "'charmap' codec can't encode character '\\u2713' in position 67: character maps to <undefined>"
+        },
+        {
+          "payload_bytes": 7083,
+          "psnr_db": 23.5796,
+          "ssim": 0.347059,
+          "mse": 0.00438567,
+          "exact_recovery": true
+        },
+        {
+          "payload_bytes": 7083,
+          "error": "'charmap' codec can't encode character '\\u2713' in position 67: character maps to <undefined>"
+        }
+      ]
+    },
+    {
+      "image_index": 3,
+      "image_name": "C:\\Users\\mpada\\OneDrive\\Documents\\AI-Adaptive-Steganography\\datasets\\coco_subset\\coco_val_000000001584",
+      "payloads": [
+        {
+          "payload_bytes": 64,
+          "psnr_db": 23.7879,
+          "ssim": 0.539848,
+          "mse": 0.0041803,
+          "exact_recovery": true
+        },
+        {
+          "payload_bytes": 64,
+          "error": "'charmap' codec can't encode character '\\u2713' in position 67: character maps to <undefined>"
+        },
+        {
+          "payload_bytes": 512,
+          "psnr_db": 23.7881,
+          "ssim": 0.539805,
+          "mse": 0.00418009,
+          "exact_recovery": true
+        },
+        {
+          "payload_bytes": 512,
+          "error": "'charmap' codec can't encode character '\\u2713' in position 67: character maps to <undefined>"
+        },
+        {
+          "payload_bytes": 2048,
+          "psnr_db": 23.7824,
+          "ssim": 0.539232,
+          "mse": 0.00418564,
+          "exact_recovery": true
+        },
+        {
+          "payload_bytes": 2048,
+          "error": "'charmap' codec can't encode character '\\u2713' in position 67: character maps to <undefined>"
+        },
+        {
+          "payload_bytes": 7083,
+          "psnr_db": 23.7643,
+          "ssim": 0.538785,
+          "mse": 0.00420313,
+          "exact_recovery": true
+        },
+        {
+          "payload_bytes": 7083,
+          "error": "'charmap' codec can't encode character '\\u2713' in position 67: character maps to <undefined>"
+        }
+      ]
+    },
+    {
+      "image_index": 4,
+      "image_name": "C:\\Users\\mpada\\OneDrive\\Documents\\AI-Adaptive-Steganography\\datasets\\coco_subset\\nat_baboon",
+      "payloads": [
+        {
+          "payload_bytes": 64,
+          "psnr_db": 23.5106,
+          "ssim": 0.669729,
+          "mse": 0.00445599,
+          "exact_recovery": true
+        },
+        {
+          "payload_bytes": 64,
+          "error": "'charmap' codec can't encode character '\\u2713' in position 67: character maps to <undefined>"
+        },
+        {
+          "payload_bytes": 512,
+          "psnr_db": 23.5075,
+          "ssim": 0.669095,
+          "mse": 0.00445916,
+          "exact_recovery": true
+        },
+        {
+          "payload_bytes": 512,
+          "error": "'charmap' codec can't encode character '\\u2713' in position 67: character maps to <undefined>"
+        },
+        {
+          "payload_bytes": 2048,
+          "psnr_db": 23.4947,
+          "ssim": 0.668199,
+          "mse": 0.00447228,
+          "exact_recovery": true
+        },
+        {
+          "payload_bytes": 2048,
+          "error": "'charmap' codec can't encode character '\\u2713' in position 67: character maps to <undefined>"
+        },
+        {
+          "payload_bytes": 7083,
+          "psnr_db": 23.5022,
+          "ssim": 0.669366,
+          "mse": 0.00446453,
+          "exact_recovery": true
+        },
+        {
+          "payload_bytes": 7083,
+          "error": "'charmap' codec can't encode character '\\u2713' in position 67: character maps to <undefined>"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "mean_psnr_db": 23.7107,
+    "mean_ssim": 0.516824,
+    "mean_mse": 0.00425944
+  }
+}

@@ -1,0 +1,104 @@
+# AI-Adaptive-Steganography Configuration File
+
+project:
+  name: "AI-Based Adaptive Image Embedding Framework"
+  version: "2.0.0"
+  seed: 42
+
+image:
+  size: 256
+  channels: 3
+  supported_extensions: [".png", ".jpg", ".jpeg", ".bmp"]
+
+training:
+  batch_size: 16
+  learning_rate: 0.0001
+  epochs: 50
+  num_workers: 2
+  device: "cuda" # fallbacks to 'cpu' if CUDA is unavailable
+
+adaptive_analyzer:
+  image_size: 256
+  input_channels: 3
+  output_channels: 1
+  base_channels: 32
+  learning_rate: 0.0001
+  batch_size: 8
+  epochs: 20
+  validation_interval: 1
+  checkpoint_dir: "models/adaptive_analyzer"
+  
+  loss:
+    map_weight: 1.0
+    smoothness_weight: 0.1
+
+  reference_map:
+    edge_weight: 0.4
+    texture_weight: 0.3
+    variance_weight: 0.3
+    smooth_penalty: 0.2
+    variance_window: 7
+
+payload:
+  max_size_bytes: 4096
+  header_magic: "ASTG"
+  version: 1
+  pbkdf2_iterations: 100000
+
+paths:
+  dataset_root: "datasets"
+  train: "datasets/train"
+  validation: "datasets/validation"
+  test: "datasets/test"
+  models: "models"
+  adaptive_analyzer_models: "models/adaptive_analyzer"
+  results: "results"
+  adaptive_maps: "results/adaptive_maps"
+  adaptive_analyzer_results: "results/adaptive_analyzer"
+  phase2a_checkpoints: "checkpoints/phase2a"
+  phase2a_outputs: "outputs/phase2a"
+
+# ─── Phase 2A: UNet Encoder + Decoder Training ───────────────────────────────
+phase2a:
+  # Model architecture
+  encoder_in_channels: 5       # cover(3) + payload(1) + suitability(1)
+  encoder_out_channels: 3
+  decoder_in_channels: 3
+  base_dim: 32
+  scaling_factor: 0.15         # residual perturbation amplitude
+
+  # Training hyperparameters
+  epochs: 15
+  batch_size: 2                # manageable for CPU training
+  learning_rate: 0.001
+  seed: 42
+  num_workers: 0               # 0 = main process only (safe on Windows)
+
+  # Loss weights  (Total = alpha * img_mse + beta * payload_bce)
+  loss:
+    alpha: 1.0                 # image reconstruction weight
+    beta: 10.0                 # secret recovery weight (strong gradient for bit recovery)
+
+  # Checkpoint / output paths
+  checkpoint_dir: "checkpoints/phase2a"
+  output_dir: "outputs/phase2a"
+  dataset_dir: "datasets/coco_subset"
+
+  # Resume training
+  resume_checkpoint: null      # set to checkpoint path string to resume
+
+# ─── Phase 3: AES-GCM Cryptographic Integration & FEC Framing ────────────────
+phase3:
+  encryption_algorithm: "AES-256-GCM"
+  key_derivation: "PBKDF2-HMAC-SHA256"
+  pbkdf2_iterations: 100000
+  salt_length_bytes: 16
+  nonce_length_bytes: 12
+  tag_length_bytes: 16
+  fec_algorithm: "Reed-Solomon"
+  fec_nsym_parity_symbols: 32
+  carrier_shape: [256, 256]
+  max_usable_plaintext_bytes: 4096
+  scaling_factor: 0.15
+  binarization_threshold: 0.5
+

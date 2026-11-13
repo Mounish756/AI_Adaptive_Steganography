@@ -1,0 +1,24 @@
+{
+  "source_checkpoint": "checkpoints/phase2b/phase2b_model.pth",
+  "phase5_checkpoint": "checkpoints/phase5\\best_model.pth",
+  "scaling_factor": 0.15,
+  "loss_weights": {
+    "alpha": 1.0,
+    "beta": 10.0,
+    "ssim_weight": 2.0,
+    "edge_weight": 1.0,
+    "smooth_weight": 1.0
+  },
+  "test_metrics": {
+    "avg_psnr": 26.144672743273894,
+    "avg_ssim": 0.739605851173672,
+    "avg_mse": 0.0024642682480311663,
+    "avg_ber": 0.013299560546874978,
+    "avg_bit_acc": 0.986700439453125
+  },
+  "training": {
+    "epochs": 20,
+    "lr": 5e-05,
+    "batch_size": 2
+  }
+}

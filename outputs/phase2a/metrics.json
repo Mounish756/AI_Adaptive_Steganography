@@ -1,0 +1,20 @@
+{
+  "smoke_test": false,
+  "dataset_dir": "datasets/coco_subset",
+  "best_val_loss": 0.21754826605319977,
+  "test_metrics": {
+    "avg_mse": 0.004273242837211943,
+    "avg_psnr": 23.69676264129583,
+    "avg_ssim": 0.5161129022112961,
+    "avg_ber": 0.001605224609375,
+    "avg_bit_acc": 0.998394775390625
+  },
+  "config": {
+    "epochs": 15,
+    "batch_size": 2,
+    "learning_rate": 0.001,
+    "loss_alpha": 1.0,
+    "loss_beta": 10.0,
+    "scaling_factor": 0.15
+  }
+}

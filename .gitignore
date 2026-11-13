@@ -1,0 +1,42 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+
+# PyTest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Data & Model Weights
+models/*.pth
+models/*.pt
+models/*.onnx
+models/adaptive_analyzer/*.pth
+models/adaptive_analyzer/*.pt
+!models/adaptive_analyzer/.gitkeep
+datasets/train/*
+datasets/validation/*
+datasets/test/*
+!datasets/train/.gitkeep
+!datasets/validation/.gitkeep
+!datasets/test/.gitkeep
+
+# Results & Output Artifacts
+results/adaptive_maps/*
+!results/adaptive_maps/.gitkeep
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
